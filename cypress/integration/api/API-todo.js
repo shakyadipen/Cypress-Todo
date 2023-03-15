@@ -65,4 +65,12 @@ describe("Test All Functionalities Using API",()=>{
    
 
 })
+it("Should Delete Item Using ID",()=>{
+cy.request({
+    method:"DELETE",
+    url:"http://localhost:8080/todos/"+id,
+}).then(response=>{
+    expect(response.status).to.eql(200)
+})
+})
 })
